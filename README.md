@@ -73,7 +73,6 @@ sudo systemctl enable --now apache2
   ```
   To set up a **new Apache configuration file** for **port 8080**, follow these steps:
 
----
 
 ## **1️⃣ Create a New Virtual Host Configuration**
 Apache's default configuration listens on **port 80**, but we can create a custom configuration to listen on **port 8080**.
@@ -96,8 +95,6 @@ sudo nano /etc/apache2/sites-available/custom-site.conf
 - Replace **`example.com`** with your domain or IP.
 - Ensure the `DocumentRoot` points to the right website directory.
 
----
-
 ## **2️⃣ Change Apache to Listen on Port 8080**
 Apache must listen to **port 8080**.
 
@@ -111,8 +108,6 @@ sudo nano /etc/apache2/ports.conf
   ```
 - Save and exit (`CTRL + X`, then `Y` and `ENTER`).
 
----
-
 ## **3️⃣ Create the Website Directory**
 ```bash
 sudo mkdir -p /var/www/custom-site
@@ -120,15 +115,11 @@ sudo chown -R www-data:www-data /var/www/custom-site
 echo "<h1>Custom Apache Site on Port 8080</h1>" | sudo tee /var/www/custom-site/index.html
 ```
 
----
-
 ## **4️⃣ Enable the New Site and Restart Apache**
 ```bash
 sudo a2ensite custom-site.conf
 sudo systemctl restart apache2
 ```
-
----
 
 ## **5️⃣ Access Your Site**
 - Open a **browser** and go to:
@@ -140,15 +131,10 @@ sudo systemctl restart apache2
   http://localhost:8080
   ```
 
----
-
 ## **6️⃣ (Optional) Allow Firewall Rules**
 ```bash
 sudo ufw allow 8080/tcp
 ```
-
----
-
 
 ---
 
