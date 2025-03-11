@@ -176,7 +176,7 @@ sudo systemctl enable --now smbd
 
 ---
 
-## **4. MySQL (Database Server)**
+## **4. MySQL or Mariadb (Database Server)**
 ### **🔹 Install MySQL**
 ```bash
 sudo apt-get install mariadb-server -y 
@@ -207,7 +207,8 @@ sudo systemctl enable --now mysql
   ```
 - **Allow Remote Connections:**
   ```bash
-  sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+  sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf (mariadb also works for mysql)
+  sudo nano /etc/mysql/my.cnf (mysql direct conf file)
   ```
   Change:
   ```
