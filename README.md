@@ -179,7 +179,7 @@ sudo systemctl enable --now smbd
 ## **4. MySQL (Database Server)**
 ### **🔹 Install MySQL**
 ```bash
-sudo apt install mysql-server -y
+sudo apt-get install mariadb-server -y 
 ```
 
 ### **🔹 Start & Enable MySQL**
