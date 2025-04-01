@@ -130,6 +130,17 @@ sudo systemctl restart apache2
   ```
   http://localhost:8080
   ```
+- For **Blocking** particular folder:
+  ```
+<Directory "/var/www/html/private">
+    Require all denied
+</Directory>
+ ```
+ ```
+<Directory "/var/www/html/public">
+    Require all granted
+</Directory>
+ ```
 
 ## **6️⃣ (Optional) Allow Firewall Rules**
 ```bash
