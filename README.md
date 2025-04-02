@@ -318,10 +318,6 @@ sudo systemctl enable --now vsftpd
 
 ### **🔹 Setup FTP**
 - **Enable Anonymous Access (Optional):**
-  ``` 
-    bashecho "Policy" | sudo tee /etc/hostname
-    sudo sed -i "s/$HOSTNAME/Policy/g" /etc/hosts
-    sudo systemctl restart systemd-logind
   ```
   sudo nano /etc/vsftpd.conf
   ```
@@ -338,7 +334,10 @@ sudo systemctl enable --now vsftpd
 ### **🔹changing hostname**
 -**Make sure to reboot after using this commands to reflect changes**
    ```
-    
+    bashecho "Policy" | sudo tee /etc/hostname
+    sudo sed -i "s/$HOSTNAME/Policy/g" /etc/hosts
+    sudo systemctl restart systemd-logind
+  ```
    
 ### **🚀 Final Notes**
 - Ensure **firewall rules** allow required ports:
